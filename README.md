@@ -1,2 +1,2 @@
-# Chatbot Project
+# Chatbot Project - Hotel Booking
 This project is based on the Hotel booking business use case. Using the RASA framework, I’ve built a chatbot that can assist the consumer to book rooms. This chatbot can store the necessary information needed for booking in a MySQL database. Also, it can answer frequently asked questions regarding the hotel. eg: About the available room types, contact number, canceling policy and canceling reservation info, etc.
