@@ -1,2 +1,2 @@
-# Chatbot-Developer-Internship-Project
-Developed a Chatbot for a business use case during my internship period at 'Let the data confess' company, using the RASA framework and deployed with google cloud and docker.
+# Chatbot Project
+This project is based on the Hotel booking business use case. Using the RASA framework, I’ve built a chatbot that can assist the consumer to book rooms. This chatbot can store the necessary information needed for booking in a MySQL database. Also, it can answer frequently asked questions regarding the hotel. eg: About the available room types, contact number, canceling policy and canceling reservation info, etc.
