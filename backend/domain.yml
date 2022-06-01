@@ -1,0 +1,310 @@
+version: "3.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - hotel_booking
+  - stop
+  - faq_check_in_time
+  - faq_check_out_time
+  - faq_cancel_policy
+  - faq_cancel_reservation
+  - faq_reception_time
+  - faq_parking
+  - faq_swimming_pool
+  - faq_wifi
+  - rooms 
+  - faq_contact_number
+  - thankyou
+  - email_eg
+  - phone_num
+  - airport
+
+
+entities:
+  - email
+  - phone_number
+  - phone-number
+
+slots:
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: book_room_form
+          requested_slot: name
+
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: email
+      conditions:
+        - active_loop: book_room_form
+          requested_slot: email
+
+  phone_number:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: phone_number
+      conditions:
+        - active_loop: book_room_form
+          requested_slot: phone_number
+
+  adults:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: book_room_form
+          requested_slot: adults
+
+  children:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: book_room_form
+          requested_slot: children
+
+  room_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: book_room_form
+          requested_slot: room_type
+
+  room_num:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: book_room_form
+          requested_slot: room_num 
+
+  check_in:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: book_room_form
+          requested_slot: check_in
+
+  check_out:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: book_room_form
+          requested_slot: check_out   
+
+forms:
+  book_room_form: 
+    required_slots:
+      - name
+      - email
+      - phone_number
+      - adults
+      - children
+      - room_type
+      - room_num
+      - check_in
+      - check_out
+      - airport
+
+responses:
+  utter_greet:
+  - text: "Hi,Welcome to Hotel Residency, I am Alice, your virtual assistant, designed to answer the queries about Hotel Residency. I can Help you with Hotel room booking, FAQ's, nearest attractions e.t.c."
+  
+  utter_airport:
+  - text: "The nearest airport is 8 km from our hotel, cab is also available"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  
+  utter_thankyou:
+  - text: "you're welcome, Our main goal is customer satisfaction"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_name:
+  - text: "Please provide your Full name"
+
+  utter_ask_email:
+  - text: "Your Email address"
+
+  utter_ask_phone_number:
+  - text: "Please enter a valid contact number"
+
+  utter_ask_adults:
+  - text: "How many adults (12 or above years old) will be staying ?"
+    elements:
+    - title: ""
+      subtitle: ""
+      buttons:
+        - title: 1 - 2
+          payload: 1 - 2
+        - title: 3 - 4
+          payload: 3 - 4
+        - title: 5 people or more
+          payload: 5 people or more
+
+  utter_ask_children:
+  - text: "How many children (below 12 years old) will be staying?"
+    elements:
+    - title: ""
+      subtitle: ""
+      buttons:
+        - title: 0
+          payload: 0 
+        - title: 1 - 2
+          payload: 1 - 2
+        - title: 3 - 4
+          payload: 3 - 4
+
+  utter_ask_room_type:
+  - text : " What kind of room do you want to book? "
+    elements:
+    - title: ""
+      subtitle: ""
+      buttons:
+        - title : Superior Room
+          payload : Superior Room
+        - title: Superior Panoramic room
+          payload : Superior Panoramic room
+        - title : Superior Connecting room
+          payload : Superior Connecting room
+        - title: Executive room
+          payload: Executive room
+        - title: Suite
+          payload: Suite
+
+  utter_ask_room_num:
+  - text : "How many rooms would you like to book? Maximum Allowance - 5, for bulk booking please contact us via customer care"
+    elements:
+    - title: ""
+      subtitle: ""
+      buttons:
+        - title: 1
+          payload: 1 
+        - title: 2
+          payload: 2
+        - title: 3
+          payload: 3
+        - title: 4
+          payload: 4
+        - title: 5
+          payload: 5
+          
+  utter_ask_check_in:
+  - text: "On which date would you like to check -in ? Eg: 12/07/2022"
+
+  utter_ask_check_out:
+  - text: "When would you like to checkout ? Eg: 14/07/2022"
+
+  utter_check_in_faq:
+    - text : "24 hrs check-in available. Minimum check-in age is 20. Please contact reception for early check-in requests."
+
+  utter_check_out_faq:
+    - text:  "Check-out time is from 12am. Please contact reception for late check-out"
+
+  utter_cancel_reservation:
+    - text : "To cancel your reservation, please contact the hotel's hotline: +91 8399439483 for direct support."
+
+  utter_cancel_policy:
+    - text : "The reservation deposit will be refunded if the cancellation occurs at least 15 days prior to arrival. For cancellations after this time, a penalty will be imposed according to the hotel's cancellation policy. "
+
+  utter_swimming_pool:
+    - text : "Swimming pool is open and monitored by security for 24/7. It's closed during winter season."
+
+  utter_wifi_faq:
+    - text : " The hotel is equipped with high speed FREE wifi internet in the room and in public areas and the connection will be very convenient. The wifi password is provided in the reception"
+  
+  utter_rooms_faq:
+    - text: "Our hotel offers 5 types of rooms: 
+            1.Superior room - The superior rooms come with option of King size bed, Queen size bed, Twin beds and other modern amenities. These rooms are specially designed to makes your stay comfortable. Area: 275 Sq.Ft
+            2.Superior Panoramic room - The superior Panoramic rooms come with Wide & Extensive view of city and happenings with the option of King size bed,  Twin beds, and other modern amenities. These rooms are specially designed to make your stay comfortable.
+            3.Superior Connecting room - The superior Connecting Rooms designed for Family stay together and secluded come with the option of King size bed, Queen size bed, Twin beds, and other modern amenities. These rooms are specially designed to make your stay comfortable.
+            4.Executive Room - The executive rooms encompass all features of a superior room along with additional living space for our guest’s greater comfort. It comes with option King size bed, Queen size bed, Twin beds and other modern amenities. Area: 287 Sq.Ft
+            5.Suite - Our legendary suites are unique in design and deliver unrivalled grandeur, splendour, and comfort. All suite rooms come with King size beds and other modern amenities. Area: 538 Sq.Ft "
+          
+  utter_continue: 
+    - text: "Do you want to stop the booking process?"
+
+  utter_thank_time:
+    - text: "Thank You for your time. See you again :)"
+
+  utter_contact_no:
+    - text: "You can contact us via phone: 8983905804 or via email residency@gmail.com"
+  
+  utter_parking:
+    - text: "The hotel has free under floor parking system"
+
+  utter_reception_time:
+    - text: "Reception is available 24/7, feel free to contact us "
+
+
+actions:
+  - utter_greet
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_iamabot
+  - utter_ask_name
+  - utter_ask_email
+  - utter_ask_phone_number
+  - utter_ask_adults
+  - utter_ask_children
+  - utter_ask_room_type
+  - utter_ask_room_num
+  - utter_ask_check_in
+  - utter_ask_check_out
+  - utter_continue
+  - utter_thank_time
+  - action_submit
+  - utter_check_in_faq
+  - utter_check_out_faq
+  - utter_cancel_policy
+  - utter_cancel_reservation
+  - utter_swimming_pool
+  - utter_wifi_faq
+  - utter_rooms_faq
+  - utter_contact_no
+  - utter_parking
+  - utter_reception_time
+  - validate_book_room_form
+  - utter_airport
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
