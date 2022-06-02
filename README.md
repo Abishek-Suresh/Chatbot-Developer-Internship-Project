@@ -42,10 +42,10 @@ The Domain file is a directory of everything the assistant knows:
 ## Deployment phase: (Errors and solutions are mentioned):
 * I’ve used Docker and Google Cloud Platform for the deployment part. Docker allows the applications to be packaged as containers, which enables us to separate our applications from the infrastructure.
 * Google cloud virtual machine is created, and a ssh key is generated for it using putty and connected. The files have been transferred from the local machine to GCP by using WinSCP.
-![File Arrangement](images/file arrangement.jpeg)
-* The files are arranged as the above image shows, where inside actions folder lies the action.py file and a Docker file to install the dependencies such as mysql connector.
+* The files are arranged as the below image shows, where inside actions folder lies the action.py file and a Docker file to install the dependencies such as mysql connector.
 * Inside Backend folder, the models trained, the nlu, rules, stories and all the rest of the files are there. Another docker file inside the backend consists of the commands which is to be run in the backend. Eg: --enable api, -- cors, --debug etc.
-* Now in the docker-compose.yml file, we have created three containers for Nginx, rasa_server and Action_server respectively and their server ports were mentioned. Duckling is also mentioned, since we’re using it.Downloaded docker and MySQL in GCP, and other necessities inside a virtual environment.
+* Now in the docker-compose.yml file, we have created three containers for Nginx, rasa_server and Action_server respectively and their server ports were mentioned. Duckling is also mentioned, since we’re using it.Downloaded docker and MySQL in GCP, and other necessities inside a virtual environment.</ul>
+![File Arrangement](Images/file arrangement.jpg)
 
 ## REFERENCES:
 * https://datahive.ai/deploying-rasa-chatbot-on-google-cloud-with-docker/
