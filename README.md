@@ -1,6 +1,6 @@
 # Chatbot Project - Hotel Booking
 
-<img src="Images/logo.jpg">
+<img src="Images for read_me/logo.jpg">
 
 * This project is based on the Hotel booking business use case. Using the **RASA framework (Version 3.0)**, I’ve built a chatbot that can assist the consumer to book rooms. This chatbot can store the necessary information needed for booking a room, in a MySQL database. Also, it can answer frequently asked questions regarding the hotel. eg: About the available room types, contact number, canceling policy and canceling reservation info, etc.
 * “I would like to thank my mentor **Arpita Gupta mam** and **“Let the data confess”** company for this wonderful opportunity and guiding me and my teammate Aswin Kumar to complete this project.” 
@@ -46,7 +46,7 @@ The Domain file is a directory of everything the assistant knows:
 * I’ve used Docker and Google Cloud Platform for the deployment part. Docker allows the applications to be packaged as containers, which enables us to separate our applications from the infrastructure.
 * Google cloud virtual machine is created, and a ssh key is generated for it using putty and connected. The files have been transferred from the local machine to GCP by using WinSCP.
 * The files are arranged as the below image shows, where inside actions folder lies the action.py file and a Docker file to install the dependencies such as mysql connector.
-          <img src = "Images/file arrangement.jpg"></img>
+          <img src = "Images for read_me/file arrangement.jpg"></img>
 * Inside Backend folder, the models trained, the nlu, rules, stories and all the rest of the files are there. Another docker file inside the backend consists of the commands which is to be run in the backend. Eg: --enable api, -- cors, --debug etc.
 * Now in the docker-compose.yml file, we have created three containers for Nginx, rasa_server and Action_server respectively and their server ports were mentioned. Duckling is also mentioned, since we’re using it.Downloaded docker and MySQL in GCP, and other necessities inside a virtual environment.
 
