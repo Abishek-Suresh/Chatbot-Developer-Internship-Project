@@ -1,0 +1,240 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yeah
+    - yes please
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: thankyou
+  examples: |
+    - thank you
+    - thanks eh
+    - thank you
+    - good job
+    - thank you
+    - thank you bot
+    - thanks bot
+    - thank
+    - thank you so much
+    - great! Thanks
+
+- intent: hotel_booking
+  examples: |
+    - I need to book a room
+    - book a room
+    - how can I book a room
+    - need a room to stay
+    - Want to book a room
+    - how to book a room
+    - make a reservation
+
+- intent: faq_check_in_time
+  examples: |
+    - Check-in time
+    - What is the check-in time?
+    - From what time can you start checking in?
+    - From what time can check-in?
+    - When is the check-in time?
+    - Can you tell me the check-in time?
+    - Hotel check-in time
+    - When can I check in?
+    - Can you tell me when to check in?
+    - When is check-in?
+    - Check in
+    - Check in
+
+- intent: faq_check_out_time
+  examples: |
+    - Check-out time
+    - What is the check-out time?
+    - From what time can you start checking out?
+    - From what time can check out?
+    - What time is check-out time?
+    - Can you tell me the check-out time?
+    - Let me know the check-out time
+    - When do I have to check out?
+    - When to check out?
+    - Check-out time
+    - Check
+    - Check out
+
+- intent: faq_cancel_policy
+  examples: |
+    - What is the cancellation policy?
+    - Can you tell me the cancellation policy
+    - I would like to know the hotel's cancellation policy
+    - Do you have any cancellation policy?
+    - I want to see your cancellation policy
+    - Where is the cancellation policy?
+  
+
+- intent: faq_cancel_reservation
+  examples: |
+    - I want to cancel a reservation that I have made
+    - Canceled my reservation that I made earlier
+    - I want to cancel the room I booked
+    - How to cancel the room I booked
+    - Can I cancel my reservation?
+    - Cancel my reservation
+
+- intent: faq_reception_time
+  examples: |
+    - From what time does the reception work?
+    - Until when does the reception work?
+    - What time does the reception work?
+    - Working time of the front desk
+    - Working hours of the front desk
+
+- intent: faq_parking
+  examples: |
+    - Does the hotel have a car park?
+    - Where is the hotel parking?
+    - Where is the hotel car park
+    - Where is the hotel parking?
+
+- intent: faq_swimming_pool
+  examples: |
+    - Does the hotel have a swimming pool?
+    - Is there a swimming pool at the hotel?
+    - Does the hotel have a swimming pool?
+
+- intent: faq_wifi
+  examples: |
+    - Does the hotel have wifi?
+    - Wifi
+    - I want to ask the hotel's wifi
+    - Does the hotel offer free wifi?
+    - Internet
+    - Does the hotel have internet?
+    - Does the hotel have free internet?
+  
+- intent: faq_contact_number
+  examples: |
+    - What is the hotel's phone number?
+    - What is the hotel's hotline number?
+    - What phone number should I contact when I have an urgent problem?
+    - What is the hotel hotline?
+    - What is a hotline?
+    - How can i contact the hotel?
+    - What is the hotline phone number?
+    - Phone number for reservation
+
+- intent: rooms
+  examples: |
+    - What types of rooms does the hotel have?
+    - What types of rooms are available?
+    - What types of rooms does the hotel offer?
+    - What types of rooms does the hotel have?
+
+- intent: email_eg
+  examples: |
+    - my email is [abis@gmail.com](email) 
+    - email address is [marvel@gmail.com](email)
+    - [jenni@gmail.com](email) this is my email  
+
+- intent: phone_num
+  examples: |
+    - my number is [9884367252](phone_number)
+    - my phone number is [9898374423](phone_number)
+    - [8986375436](phone_number)
+
+- intent: stop
+  examples: |
+    - I want to stop
+    - I gave it wrong.
+    - stop the booking
+    - I dont want a room
+    - I dont need this booking
+    - I want to stop this room booking
+
+- intent: airport
+  examples: |
+    - Is the hotel near to the airport?
+    - Airport to hotel distance
+

@@ -1,0 +1,144 @@
+version: "3.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: check_in_faq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: faq_check_in_time
+  - action: utter_check_in_faq
+  - intent: thankyou
+  - action: utter_thankyou
+
+- story: check_out_faq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: faq_check_out_time
+  - action: utter_check_out_faq
+  - intent: thankyou
+  - action: utter_thankyou
+
+- story: cancel_policy_faq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: faq_cancel_policy
+  - action: utter_cancel_policy
+  - intent: thankyou
+  - action: utter_thankyou
+
+- story: cancel_reservation_faq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: faq_cancel_reservation
+  - action: utter_cancel_reservation
+  - intent: thankyou
+  - action: utter_thankyou
+
+- story: swimming_pool_faq 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: faq_swimming_pool
+  - action: utter_swimming_pool
+  - intent: thankyou
+  - action: utter_thankyou
+
+- story: Wifi_faq
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: faq_wifi
+  - action: utter_wifi_faq
+  - intent: thankyou
+  - action: utter_thankyou
+
+- story: room_faq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: rooms
+  - action: utter_rooms_faq
+  - intent: thankyou
+  - action: utter_thankyou
+
+- story: contact_faq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: faq_contact_number
+  - action: utter_contact_no
+  - intent: thankyou
+  - action: utter_thankyou
+
+- story: parking_faq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: faq_parking
+  - action: utter_parking
+  - intent: thankyou
+  - action: utter_thankyou
+
+- story: reception_time_faq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: faq_reception_time
+  - action: utter_reception_time
+  - intent: thankyou
+  - action: utter_thankyou
+
+- story: User doesn't want to continue form
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: hotel_booking
+  - action: book_room_form
+  - active_loop: book_room_form
+  - intent: stop
+  - action: utter_continue
+  - intent: affirm
+  - action: action_deactivate_loop
+  - active_loop: null 
+  - action: utter_thank_time
+
+- story: airport
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: airport
+  - action: utter_airport
+  - intent: thankyou
+  - action: utter_thankyou
+
