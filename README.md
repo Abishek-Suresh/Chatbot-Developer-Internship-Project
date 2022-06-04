@@ -42,7 +42,7 @@ The Domain file is a directory of everything the assistant knows:
 * Secondly, created a class ValidateBookRoomForm which inherits the FormValidationAction via rasa sdk api, which we imported earlier in the file. In this class, we're validating the slots one by one using Python.
 * Finally, ActionSubmit class is made which inherits the Action from rasa sdk, here, we call the data update function to store the information collected using the slots, and a message for the user is uttered.
 
-## Deployment phase: (Errors and solutions are mentioned):
+## Deployment phase: (Errors and solutions are to be mentioned):
 * I’ve used Docker and Google Cloud Platform for the deployment part. Docker allows the applications to be packaged as containers, which enables us to separate our applications from the infrastructure.
 * Google cloud virtual machine is created, and a ssh key is generated for it using putty and connected. The files have been transferred from the local machine to GCP by using WinSCP.
 * The files are arranged as the below image shows, where inside actions folder lies the action.py file and a Docker file to install the dependencies such as mysql connector.
