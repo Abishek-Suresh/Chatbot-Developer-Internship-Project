@@ -75,7 +75,7 @@ We should comment out the bind address after creating our own username and passw
           sudo docker-compose up --build
           
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04 - FOR REFERENCE
-## errors faced and solutions for them:
+## Errors faced and solutions for them:
 1. **ERROR:** RasaException: Failed to set channel webhook: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: bad webhook: HTTPS url must be provided for webhook.</br>**SOLUTION**: For deploying in telegram, the website must be HTTPS Secured, mostly for every deployment method a HTTPS secured website is needed. Installing an SSL Certificate helps us, used certbot to install SSL certificate and Nginx proxy. There's another solution to this, as we are only going to test, we can use **NGROK** - is a cross-platform application that exposes local server ports to the Internet.(from local server or machine to Global)
 
 
