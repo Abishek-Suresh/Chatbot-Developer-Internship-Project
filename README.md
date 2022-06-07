@@ -41,14 +41,43 @@ The Domain file is a directory of everything the assistant knows:
 * In this file we can add customized actions for our bot, to store the information collected from the user in a database, I’ve created a function ‘DataUpdate’ which connects with MySQL and saves it in the database.
 * Secondly, created a class ValidateBookRoomForm which inherits the FormValidationAction via rasa sdk api, which we imported earlier in the file. In this class, we're validating the slots one by one using Python.
 * Finally, ActionSubmit class is made which inherits the Action from rasa sdk, here, we call the data update function to store the information collected using the slots, and a message for the user is uttered.
+* Used Regular Expressions to validate each slots correctly.
 
-## Deployment phase: (Errors and solutions are to be mentioned):
+## Deployment phase:
 * I’ve used Docker and Google Cloud Platform for the deployment part. Docker allows the applications to be packaged as containers, which enables us to separate our applications from the infrastructure.
 * Google cloud virtual machine is created, and a ssh key is generated for it using putty and connected. The files have been transferred from the local machine to GCP by using WinSCP.
 * The files are arranged as the below image shows, where inside actions folder lies the action.py file and a Docker file to install the dependencies such as mysql connector.
           <img src = "Images for read_me/file arrangement.jpg"></img>
 * Inside Backend folder, the models trained, the nlu, rules, stories and all the rest of the files are there. Another docker file inside the backend consists of the commands which is to be run in the backend. Eg: --enable api, -- cors, --debug etc.
 * Now in the docker-compose.yml file, we have created three containers for Nginx, rasa_server and Action_server respectively and their server ports were mentioned. Duckling is also mentioned, since we’re using it.Downloaded docker and MySQL in GCP, and other necessities inside a virtual environment.
+
+## TO INSTALL MySQL inside google cloud:
+          sudo apt install mysql-server
+       
+          sudo mysql
+         
+We should comment out the bind address after creating our own username and password and then Created a table for storing the data that we are collecting from the user.
+
+## Install Docker inside cloud:
+          sudo apt-get update  #To normally update everything inside cloud
+          
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add
+          
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu$(lsb_release -cs) stable"
+          
+          sudo apt-get update
+          
+          apt-cache policy docker-ce
+          
+          sudo apt-get install -y docker-ce
+
+## To build the docker app and run the services:
+          sudo docker-compose up --build
+          
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04 - FOR REFERENCE
+## errors faced and solutions for them:
+1. **ERROR:** RasaException: Failed to set channel webhook: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: bad webhook: HTTPS url must be provided for webhook.</br>**SOLUTION**: For deploying in telegram, the website must be HTTPS Secured, mostly for every deployment method a HTTPS secured website is needed. Installing an SSL Certificate helps us, used certbot to install SSL certificate and Nginx proxy. There's another solution to this, as we are only going to test, we can use **NGROK** - is a cross-platform application that exposes local server ports to the Internet.(from local server or machine to Global)
+
 
 
 ## REFERENCES:
